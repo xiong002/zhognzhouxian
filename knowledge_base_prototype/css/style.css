@@ -1,0 +1,534 @@
+/* 基本重置和全局样式 */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    height: 100%;
+    background-color: #f4f7f9;
+    color: #333;
+    overflow: hidden; /* 防止页面滚动 */
+    font-size: 14px; /* 稍微调整基础字体大小 */
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding-left: 15px; /* 保留一些缩进 */
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* 应用容器 */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* 头部 */
+.app-header {
+    background-color: #ffffff;
+    padding: 12px 25px; /* 稍微增大内边距 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    height: 50px; /* 固定头部高度 */
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.user-info {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.user-info i {
+    margin-right: 5px;
+}
+
+/* 主体区域 */
+.app-body {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden; /* 防止主体区域内部滚动影响布局 */
+}
+
+/* 侧边栏 */
+.sidebar {
+    background-color: #f8f9fa; /* 侧边栏用稍浅的灰色 */
+    border-right: 1px solid #dee2e6;
+    width: 300px; /* 稍微加宽 */
+    transition: width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative; /* 为了定位切换按钮 */
+    height: calc(100vh - 50px); /* 减去头部高度 */
+}
+
+.sidebar.collapsed {
+    width: 60px; /* 折叠时宽度 */
+}
+
+.toggle-sidebar {
+    background: none;
+    border: none;
+    font-size: 1.4em;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    color: #6c757d;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: color 0.2s ease;
+}
+
+.toggle-sidebar:hover {
+    color: #343a40;
+}
+
+.sidebar.collapsed .toggle-sidebar {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15px; /* 微调位置 */
+}
+
+.sidebar-content {
+    padding: 0; /* Tab模式，内部内容自己管理padding */
+    overflow-y: auto;
+    flex-grow: 1;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.sidebar.collapsed .sidebar-content {
+    opacity: 0;
+    pointer-events: none; /* 折叠时内容不可交互 */
+}
+
+.knowledge-nav h3, .pinboard h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #2c3e50;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.knowledge-nav ul {
+    padding-left: 5px;
+}
+
+.knowledge-nav ul ul {
+    margin-left: 20px;
+    padding-left: 10px;
+    border-left: 1px solid #e0e0e0;
+}
+
+.knowledge-nav li a {
+    display: flex; /* 使用 flex 布局图标和文字 */
+    align-items: center;
+    padding: 3px 0;
+    color: #495057;
+}
+
+.knowledge-nav li a i {
+    margin-right: 8px;
+    width: 16px; /* 固定图标宽度 */
+    text-align: center;
+    color: #adb5bd;
+}
+
+.knowledge-nav li a:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.pinboard {
+    margin-top: 20px;
+}
+
+.pinboard ul {
+    padding-left: 5px; /* 暂存区减少缩进 */
+}
+
+.pinboard li a {
+    font-size: 0.9em;
+    color: #444;
+}
+
+.pin-icon {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* 主内容区 */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 50px); /* 减去头部高度 */
+    background-color: #f4f7f9;
+}
+
+/* 聊天历史 */
+.chat-history {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 25px; /* 增加 padding */
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 80%;
+    word-wrap: break-word;
+    position: relative; /* 为了包含绝对定位的 pin 按钮 */
+    padding-right: 35px; /* 为 pin 按钮留出空间 */
+}
+
+.ai-message {
+    background-color: #f1f3f5;
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+.user-message {
+    background-color: #e0effe;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.message p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.message a {
+    font-weight: bold;
+}
+
+.message a.source-link {
+    font-weight: 600; /* 来源链接更醒目 */
+    border-bottom: 1px dashed #007bff;
+}
+
+/* 聊天输入区域 */
+.chat-input-area {
+    display: flex;
+    padding: 20px;
+    border-top: 1px solid #e0e0e0;
+    background-color: #ffffff;
+}
+
+.chat-input-area textarea {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    resize: none; /* 禁止调整大小 */
+    margin-right: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    min-height: 40px; /* 最小高度 */
+    max-height: 120px; /* 最大高度，防止过长 */
+    overflow-y: auto;
+}
+
+.chat-input-area textarea:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.chat-input-area button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+    display: flex; /* 让图标和文字对齐 */
+    align-items: center;
+}
+
+.chat-input-area button:hover {
+    background-color: #0056b3;
+}
+
+.chat-input-area button i {
+    margin-right: 5px;
+}
+
+/* 可视化查看器 Modal */
+.modal {
+    display: none; /* 默认隐藏 */
+    position: fixed; /* 固定定位 */
+    z-index: 1000; /* 确保在最上层 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* 如果内容过多则允许滚动 */
+    background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 上下 10%，左右自动居中 */
+    padding: 25px;
+    border: 1px solid #888;
+    width: 70%; /* 模态框宽度 */
+    max-width: 800px; /* 最大宽度 */
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.close-modal {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#viewerTitle {
+    margin-top: 0;
+    color: #343a40;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#viewerContent {
+    max-height: 60vh; /* 限制内容最大高度 */
+    overflow-y: auto; /* 内容过多时滚动 */
+}
+
+/* 侧边栏 Tabs */
+.sidebar-tabs {
+    display: flex;
+    border-bottom: 1px solid #dee2e6;
+    background-color: #e9ecef;
+}
+
+.tab-link {
+    flex: 1;
+    padding: 12px 5px; /* 调整内边距 */
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-size: 1em; /* 统一大小 */
+    color: #6c757d;
+    text-align: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.tab-link i {
+    margin-right: 5px;
+}
+
+.tab-link .tab-text {
+    display: inline; /* 默认显示文字 */
+    transition: display 0.3s ease;
+}
+
+.tab-link.active {
+    color: #007bff;
+    border-bottom-color: #007bff;
+    background-color: #f8f9fa; /* Active tab 背景色与内容区一致 */
+}
+
+.tab-link:hover:not(.active) {
+    background-color: #dee2e6;
+    color: #495057;
+}
+
+.sidebar.collapsed .tab-link {
+    padding: 15px 5px; /* 折叠时增加垂直 padding */
+}
+
+.sidebar.collapsed .tab-link .tab-text {
+    display: none; /* 折叠时隐藏文字 */
+}
+
+.sidebar.collapsed .tab-link i {
+    margin-right: 0; /* 折叠时图标居中 */
+    font-size: 1.2em;
+}
+
+/* Tab 内容区域 */
+.tab-content {
+    display: none; /* 默认隐藏 */
+    padding: 15px;
+    overflow-y: auto;
+    height: calc(100% - 45px); /* 减去 tab 高度 */
+    box-sizing: border-box;
+}
+
+.tab-content.active {
+    display: block; /* Active 的显示 */
+}
+
+/* 侧边栏各部分标题 */
+.tab-content h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #343a40;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.tab-content h4 i {
+    margin-right: 8px;
+    color: #6c757d;
+}
+
+/* 搜索结果 */
+.search-results-list .placeholder {
+    color: #6c757d;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
+.result-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 5px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    position: relative; /* 为了定位 pin 按钮 */
+}
+
+.result-icon {
+    font-size: 1.5em;
+    color: #6c757d;
+    margin-right: 12px;
+    margin-top: 3px;
+    width: 25px; /* 固定图标区域宽度 */
+    text-align: center;
+}
+
+.result-content {
+    flex-grow: 1;
+}
+
+.result-title {
+    font-weight: bold;
+    color: #0056b3;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.result-snippet {
+    font-size: 0.9em;
+    color: #495057;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.result-source {
+    font-size: 0.8em;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* 固定/取消固定 按钮 */
+.pin-button, .unpin-button {
+    background: none;
+    border: none;
+    color: #adb5bd;
+    cursor: pointer;
+    font-size: 0.9em; /* 调整按钮大小 */
+    padding: 5px;
+    transition: color 0.2s ease;
+    position: absolute; /* 定位到右上角 */
+    top: 5px;
+    right: 5px;
+}
+
+.pin-button:hover, .unpin-button:hover {
+    color: #007bff;
+}
+
+.message .pin-button {
+    position: absolute; /* 消息内的按钮也定位 */
+    top: 8px;
+    right: 8px;
+    opacity: 0; /* 默认隐藏 */
+    transition: opacity 0.2s ease;
+}
+
+.message:hover .pin-button {
+    opacity: 1; /* 悬停时显示 */
+}
+
+/* 暂存区列表 */
+.pinboard-list {
+    padding-left: 5px;
+}
+
+.pinboard-list li {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    position: relative; /* 为了定位 unpin 按钮 */
+    border-bottom: 1px dashed #eee; /* 稍微区分列表项 */
+}
+
+.pinboard-list li i:first-child {
+    margin-right: 8px;
+    color: #6c757d;
+    width: 16px; /* 固定图标宽度 */
+    text-align: center;
+}
+
+.pinboard-list li a {
+    flex-grow: 1;
+    color: #343a40;
+    font-size: 0.95em;
+}
+
+.pinboard-list .unpin-button {
+    position: static; /* 暂存区取消固定按钮使用文档流布局 */
+    margin-left: 10px;
+    font-size: 1em;
+} 

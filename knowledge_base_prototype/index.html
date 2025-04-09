@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>有色金属加工工程设计知识库 - 高保真原型</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">工程设计知识库</div>
+            <div class="user-info"><i class="fas fa-user-circle"></i> 工程师A</div>
+        </header>
+        <div class="app-body">
+            <aside class="sidebar collapsed">
+                <button class="toggle-sidebar" id="toggleSidebarBtn" title="切换侧边栏"><i class="fas fa-bars"></i></button>
+                <div class="sidebar-content">
+                    <div class="sidebar-tabs">
+                        <button class="tab-link active" data-tab="tab-nav"><i class="fas fa-compass"></i><span class="tab-text">导航</span></button>
+                        <button class="tab-link" data-tab="tab-search"><i class="fas fa-search"></i><span class="tab-text">搜索</span></button>
+                        <button class="tab-link" data-tab="tab-pinboard"><i class="fas fa-thumbtack"></i><span class="tab-text">暂存</span></button>
+                    </div>
+                    <div id="tab-nav" class="tab-content active">
+                        <nav class="knowledge-nav">
+                            <h4><i class="fas fa-folder-tree"></i> 知识导航</h4>
+                            <ul>
+                                <li><a href="#"><i class="fas fa-folder"></i> 铝合金</a>
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-file-alt"></i> 性能标准</a></li>
+                                        <li><a href="#"><i class="fas fa-cogs"></i> 加工工艺</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fas fa-folder"></i> 铜合金</a></li>
+                                <li><a href="#"><i class="fas fa-folder"></i> 设计规范</a>
+                                    <ul>
+                                        <li><a href="#" class="source-link" data-source-info="GB 50016-2014 防火规范"><i class="fas fa-book"></i> GB 50016-2014</a></li>
+                                        <li><a href="#"><i class="fas fa-book"></i> 行业标准 XYZ</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fas fa-folder"></i> 项目案例</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div id="tab-search" class="tab-content">
+                        <h4><i class="fas fa-list-ul"></i> 搜索结果</h4>
+                        <div class="search-results-list" id="searchResultsList">
+                            <p class="placeholder">暂无搜索结果。请在对话框中提问。</p>
+                        </div>
+                    </div>
+                    <div id="tab-pinboard" class="tab-content">
+                        <h4><i class="fas fa-thumbtack"></i> 暂存区</h4>
+                        <ul class="pinboard-list" id="pinboardList">
+                            <li data-item-id="pin-item-1"><i class="fas fa-file-excel"></i> <a href="#" class="source-link" data-source-info="关键参数表 Excel 文件">关键参数表.xlsx</a> <button class="unpin-button" title="取消固定"><i class="fas fa-times"></i></button></li>
+                            <li data-item-id="pin-item-2"><i class="fas fa-image"></i> <a href="#" class="source-link" data-source-info="XX项目工艺流程图 PNG 图片">XX项目工艺流程图.png</a> <button class="unpin-button" title="取消固定"><i class="fas fa-times"></i></button></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <main class="main-content">
+                <div class="chat-history" id="chatHistory">
+                    <div class="message ai-message">
+                        <p>您好！我是您的有色金属加工工程设计助手，请问有什么可以帮您？</p>
+                    </div>
+                    <div class="message user-message">
+                        <p>查询 6061 铝合金的 T6 热处理工艺标准，并查找相关的项目应用案例。</p>
+                        <button class="pin-button" title="固定此消息"><i class="fas fa-thumbtack"></i></button>
+                    </div>
+                    <div class="message ai-message">
+                        <p>根据知识库信息，6061 铝合金 T6 热处理工艺标准主要参考 <a href="#" class="source-link" data-source-info="GB/T XXXX-XXXX 标准文档">GB/T XXXX-XXXX</a> 标准中的相关章节。关键参数包括固溶处理温度 530±5°C，保温时间 X 小时，随后进行人工时效，温度 175±5°C，时间 Y 小时。已为您找到相关应用案例，请查看侧边栏"搜索结果"面板。 [来源: <a href="#" class="source-link" data-source-info="GB/T XXXX-XXXX 标准文档">GB/T XXXX-XXXX</a>, <a href="#" class="source-link" data-source-info="内部设计手册 V2.1">设计手册 V2.1</a>]</p>
+                        <button class="pin-button" title="固定此消息"><i class="fas fa-thumbtack"></i></button>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <textarea id="userInput" placeholder="在此输入您的问题... (Shift+Enter 换行)"></textarea>
+                    <button id="sendBtn" title="发送消息"><i class="fas fa-paper-plane"></i> 发送</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- 可视化查看器 Modal -->
+    <div id="viewerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModalBtn">&times;</span>
+            <h3 id="viewerTitle">查看内容</h3>
+            <div id="viewerContent">
+                <p>这里是模拟的文档/图纸查看器。</p>
+                <img src="https://via.placeholder.com/600x400.png?text=Placeholder+Image" alt="Placeholder" style="max-width: 100%;">
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
