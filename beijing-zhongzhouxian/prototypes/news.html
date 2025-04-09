@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻资讯 - 北京中轴线文化遗产传承与创新大赛</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body { padding-top: 56px; background-color: #f8f9fa; }
+        .news-list-item { border-bottom: 1px solid #dee2e6; }
+        .news-list-item:last-child { border-bottom: none; }
+        footer { background-color: #f8f9fa; padding: 2rem 0; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">北京中轴线大赛平台</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="competition-center.html">赛事中心</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">作品展示</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="news.html">新闻资讯</a></li>
+                 </ul>
+                 <!-- Login/Register or User Dropdown -->
+                <div class="d-flex">
+                    <a href="login.html" class="btn btn-outline-primary me-2">登录</a>
+                    <a href="register.html" class="btn btn-primary">注册</a>
+                    <!-- Logged in state placeholder -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- News Main Content -->
+    <main class="container mt-5">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold">新闻资讯</h1>
+            <p class="lead text-muted">掌握大赛最新动态与重要通知</p>
+        </div>
+
+        <!-- Filters and Search -->
+        <div class="row mb-4">
+            <div class="col-md-8 mb-2 mb-md-0">
+                <div class="btn-group" role="group" aria-label="News categories">
+                    <button type="button" class="btn btn-primary">全部</button>
+                    <button type="button" class="btn btn-outline-primary">大赛动态</button>
+                    <button type="button" class="btn btn-outline-primary">通知公告</button>
+                    <button type="button" class="btn btn-outline-primary">获奖作品</button>
+                    <button type="button" class="btn btn-outline-primary">媒体报道</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="搜索新闻标题..." aria-label="Search news">
+                    <button class="btn btn-outline-secondary" type="button"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- News List -->
+        <div class="bg-white p-3 rounded shadow-sm">
+            <ul class="list-unstyled mb-0">
+                <!-- News Item 1 -->
+                <li class="news-list-item py-3">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5><a href="news-detail.html" class="text-decoration-none text-dark">大赛正式启动，全球征集创新方案</a></h5>
+                            <p class="text-muted mb-1">北京中轴线文化遗产传承与创新大赛今日正式拉开帷幕，面向全球征集优秀作品，共同探索中轴线文化遗产的保护与活化新路径...</p>
+                        </div>
+                         <span class="badge bg-primary ms-3 flex-shrink-0">大赛动态</span>
+                    </div>
+                    <small class="text-muted">发布日期：2024-04-01</small>
+                </li>
+                <!-- News Item 2 -->
+                 <li class="news-list-item py-3">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h5><a href="news-detail.html" class="text-decoration-none text-dark">重要通知：作品提交截止日期延期说明</a></h5>
+                            <p class="text-muted mb-1">考虑到近期情况，经组委会研究决定，原定于X月X日的作品提交截止日期将延期至Y月Y日，请各位参赛者合理安排时间...</p>
+                        </div>
+                         <span class="badge bg-secondary ms-3 flex-shrink-0">通知公告</span>
+                    </div>
+                    <small class="text-muted">发布日期：2024-03-15</small>
+                </li>
+                 <!-- News Item 3 -->
+                <li class="news-list-item py-3">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                             <h5><a href="news-detail.html" class="text-decoration-none text-dark">回顾：2023年度获奖作品线上展览开启</a></h5>
+                            <p class="text-muted mb-1">为了让更多人领略上一届大赛的优秀成果，2023年度获奖作品线上展览今日正式上线，欢迎访问...</p>
+                        </div>
+                         <span class="badge bg-success ms-3 flex-shrink-0">获奖作品</span>
+                    </div>
+                    <small class="text-muted">发布日期：2024-02-28</small>
+                </li>
+                <!-- News Item 4 -->
+                <li class="news-list-item py-3">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                             <h5><a href="news-detail.html" class="text-decoration-none text-dark">媒体聚焦：XX日报深度报道大赛理念与目标</a></h5>
+                            <p class="text-muted mb-1">近日，XX日报刊发专题文章，深度解读了本次大赛的背景、意义以及对推动中轴线文化传承与创新的期望...</p>
+                        </div>
+                        <span class="badge bg-info text-dark ms-3 flex-shrink-0">媒体报道</span>
+                     </div>
+                    <small class="text-muted">发布日期：2024-02-10</small>
+                </li>
+                 <!-- Add more news items -->
+            </ul>
+        </div>
+
+        <!-- Pagination Placeholder -->
+        <nav aria-label="News navigation" class="mt-4 d-flex justify-content-center">
+            <ul class="pagination shadow-sm">
+                <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">上一页</a></li>
+                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">下一页</a></li>
+            </ul>
+        </nav>
+    </main>
+
+    <!-- Footer -->
+     <footer class="text-center text-muted py-4 bg-light mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2024 北京中轴线文化遗产传承与创新大赛组委会</p>
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item"><a href="#">关于我们</a></li>
+                <li class="list-inline-item"><a href="#">联系方式</a></li>
+                <li class="list-inline-item"><a href="#">隐私政策</a></li>
+                <li class="list-inline-item"><a href="#">服务条款</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html> 

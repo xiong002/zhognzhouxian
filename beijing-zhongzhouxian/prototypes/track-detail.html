@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛道详情 - 北京中轴线文化遗产传承与创新大赛</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body { padding-top: 56px; }
+        .track-hero { background-color: #f1f3f5; }
+        .timeline { list-style: none; padding-left: 0; position: relative; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 6px;
+            width: 2px;
+            background-color: #dee2e6;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background-color: #fff;
+            border: 2px solid #0d6efd; /* Primary color */
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-item.active::before {
+            background-color: #0d6efd;
+        }
+         .timeline-item.past::before {
+            background-color: #6c757d; /* Secondary color */
+            border-color: #6c757d;
+        }
+        footer { background-color: #f8f9fa; padding: 2rem 0; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">北京中轴线大赛平台</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Highlight based on context if needed, but remove active for general detail page -->
+                        <a class="nav-link" href="competition-center.html">赛事中心</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">作品展示</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">新闻资讯</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="login.html" class="btn btn-outline-primary me-2">登录</a>
+                    <a href="register.html" class="btn btn-primary">注册</a>
+                    <!-- Logged in state placeholder -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area: Track Detail -->
+    <main>
+        <!-- Track Hero Section -->
+        <section class="py-5 track-hero">
+            <div class="container">
+                 <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+                        <li class="breadcrumb-item"><a href="competition-center.html">赛事中心</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">赛道详情 (示例：老城复兴)</li>
+                    </ol>
+                </nav>
+                <h1 class="display-5 fw-bold">老城复兴赛道 (示例)</h1>
+                <p class="lead text-muted">聚焦历史文化街区保护与活化，探索可持续发展模式，征集具有创新性的规划设计、业态提升、社区营造方案。</p>
+                <span class="badge bg-success fs-6">征集中</span>
+                <!-- Add other statuses here based on actual track -->
+                <a href="submission-form.html" class="btn btn-lg btn-primary mt-3 float-end"><i class="bi bi-pencil-square"></i> 立即参赛</a>
+                <!-- Disable button if not in submission phase: add 'disabled' class -->
+            </div>
+        </section>
+
+        <div class="container mt-5">
+            <div class="row">
+                <!-- Left Column: Details -->
+                <div class="col-lg-8">
+                    <article>
+                        <h2 class="mb-3">赛道详细介绍</h2>
+                        <p>这里是关于"老城复兴"赛道的详细介绍文本。北京老城是中华文明源远流长的伟大见证，承载着丰富的历史信息和文化记忆。本赛道旨在激发社会各界力量，共同参与到老城保护与复兴的伟大事业中来。</p>
+                        <p>我们鼓励参赛者深入研究老城肌理、建筑特色、人文环境，提出既尊重历史、又面向未来的创新方案。无论是针对特定院落的改造设计，还是街区整体功能提升的规划；无论是传统手工艺的现代转化，还是数字技术赋能老城体验，我们都期待看到富有创意和可行性的构想。</p>
+                        <img src="https://picsum.photos/seed/oldcity_detail/800/400" class="img-fluid rounded my-4" alt="老城复兴赛道详情占位图">
+
+                        <h3 class="mt-4 mb-3">参赛规则与要求</h3>
+                        <ul>
+                            <li>参赛对象：面向全球高校师生、设计师、开发者、文化爱好者、创业团队及个人开放。</li>
+                            <li>作品形式：提交完整的项目方案书（PDF格式），包含设计理念、方案详述、技术说明、效果图/模型照片、预算分析等。可附带视频、交互原型等辅助材料。</li>
+                            <li>知识产权：参赛作品须为原创，未侵犯任何第三方知识产权。获奖作品知识产权归属另行约定。</li>
+                            <li>提交要求：通过大赛官方平台在线提交，遵循指定模板和文件大小限制。</li>
+                            <li>评审标准：创新性、可行性、在地性、可持续性、文化表达准确性。</li>
+                        </ul>
+
+                        <h3 class="mt-4 mb-3">赛道流程时间轴</h3>
+                        <ul class="timeline">
+                            <li class="timeline-item active">
+                                <h5 class="fw-bold">作品征集</h5>
+                                <p class="text-muted">2024年4月1日 - 2024年7月31日</p>
+                                <p>在线提交参赛作品。</p>
+                            </li>
+                            <li class="timeline-item">
+                                <h5 class="fw-bold">专家评审</h5>
+                                <p class="text-muted">2024年8月1日 - 2024年8月31日</p>
+                                <p>组织专家评审团进行初评和复评。</p>
+                            </li>
+                             <li class="timeline-item">
+                                <h5 class="fw-bold">入围公示</h5>
+                                <p class="text-muted">2024年9月1日 - 2024年9月15日</p>
+                                <p>公布入围作品名单。</p>
+                            </li>
+                            <li class="timeline-item">
+                                <h5 class="fw-bold">颁奖典礼</h5>
+                                <p class="text-muted">2024年10月 (待定)</p>
+                                <p>举办颁奖仪式，展示优秀成果。</p>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+
+                <!-- Right Column: Sidebar -->
+                <div class="col-lg-4">
+                    <aside class="sticky-top" style="top: 70px;"> <!-- Adjust top based on navbar height -->
+                        <div class="card shadow-sm mb-4">
+                            <div class="card-header">参赛指南与资源</div>
+                            <div class="list-group list-group-flush">
+                                <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-file-earmark-pdf me-2"></i>详细参赛手册下载</a>
+                                <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-collection me-2"></i>官方设计素材包</a>
+                                <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-question-circle me-2"></i>常见问题解答 (FAQ)</a>
+                                <a href="#" class="list-group-item list-group-item-action"><i class="bi bi-people me-2"></i>寻找队友/组队专区</a>
+                             </div>
+                        </div>
+
+                        <div class="card shadow-sm">
+                            <div class="card-header">相关优秀作品案例</div>
+                             <div class="card-body">
+                                 <div class="d-flex align-items-center mb-2">
+                                    <img src="https://picsum.photos/seed/casestudy1/64/64?grayscale" class="rounded me-3" alt="案例1缩略图">
+                                    <div>
+                                        <h6 class="mb-0"><a href="gallery-detail.html">“胡同新生”微更新项目</a></h6>
+                                        <small class="text-muted">老城复兴赛道 - 2023 获奖作品</small>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="d-flex align-items-center mb-2">
+                                     <img src="https://picsum.photos/seed/casestudy2/64/64?grayscale" class="rounded me-3" alt="案例2缩略图">
+                                    <div>
+                                        <h6 class="mb-0"><a href="gallery-detail.html">中轴线数字导览 AR 体验</a></h6>
+                                        <small class="text-muted">创意表达赛道 - 2023 获奖作品</small>
+                                    </div>
+                                </div>
+                                <!-- Add more cases or link to gallery -->
+                                <a href="gallery.html" class="btn btn-sm btn-outline-secondary w-100 mt-3">查看更多案例</a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-muted py-4 bg-light mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2024 北京中轴线文化遗产传承与创新大赛组委会</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">关于我们</a></li>
+                <li class="list-inline-item"><a href="#">联系方式</a></li>
+                <li class="list-inline-item"><a href="#">隐私政策</a></li>
+                <li class="list-inline-item"><a href="#">服务条款</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html> 

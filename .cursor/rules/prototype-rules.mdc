@@ -1,0 +1,13 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+
+项目中的图片，先从picsum.photos上获取适合的占位图片
+文件夹和文件命名不使用中文

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛道详情 - 北京中轴线大赛平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="../index.html" class="text-xl font-bold text-blue-600">中轴线大赛平台</a>
+            <div class="space-x-4">
+                <a href="../index.html" class="text-gray-600 hover:text-blue-500">首页</a>
+                <a href="index.html" class="text-gray-600 hover:text-blue-500">赛事中心</a>
+                <a href="../gallery/index.html" class="text-gray-600 hover:text-blue-500">作品展示</a>
+                <a href="../news/index.html" class="text-gray-600 hover:text-blue-500">新闻资讯</a>
+                <a href="../user/profile.html" class="text-gray-600 hover:text-blue-500">个人中心</a>
+                <a href="../auth/login.html" class="text-gray-600 hover:text-blue-500">退出登录</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <!-- 面包屑导航 -->
+        <nav class="text-sm mb-4" aria-label="Breadcrumb">
+            <ol class="list-none p-0 inline-flex">
+                <li class="flex items-center">
+                    <a href="../index.html" class="text-gray-500 hover:text-blue-500">首页</a>
+                    <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>
+                </li>
+                <li class="flex items-center">
+                    <a href="index.html" class="text-gray-500 hover:text-blue-500">赛事中心</a>
+                    <svg class="fill-current w-3 h-3 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>
+                </li>
+                <li>
+                    <span class="text-gray-700">赛事名称 1：中轴线的创意新生</span>
+                </li>
+            </ol>
+        </nav>
+
+        <div class="bg-white p-6 rounded shadow-lg">
+            <img src="https://picsum.photos/seed/comp1-detail/1000/300" alt="赛事主图" class="w-full h-64 object-cover rounded-t mb-6">
+
+            <h1 class="text-3xl font-bold mb-2">赛事名称 1：中轴线的创意新生</h1>
+            <p class="text-lg text-gray-600 mb-4">赛道：<span class="font-medium">创新设计</span> | 状态：<span class="text-green-600 font-medium">进行中</span></p>
+
+            <div class="flex justify-between items-center mb-6 border-t border-b py-3">
+                <div>
+                    <p class="text-sm text-gray-500">报名截止日期: 2024-08-31</p>
+                    <p class="text-sm text-gray-500">作品提交截止日期: 2024-09-30</p>
+                </div>
+                <a href="../submission/submit-work.html" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded text-lg">
+                    立即提交作品
+                </a>
+            </div>
+
+            <!-- Tab 导航 -->
+            <div class="mb-6 border-b border-gray-200">
+                <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                    <a href="#details" class="border-blue-500 text-blue-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">赛事详情</a>
+                    <a href="#rules" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">参赛规则</a>
+                    <a href="#judges" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">评委阵容</a>
+                    <a href="#awards" class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">奖项设置</a>
+                </nav>
+            </div>
+
+            <!-- Tab 内容区域 -->
+            <div>
+                <section id="details" class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">赛事详情</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus.
+                        <br><br>
+                        Vivamus suscipit tortor eget felis porttitor volutpat. Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                </section>
+
+                <section id="rules" class="mb-8">
+                     <h2 class="text-2xl font-semibold mb-4">参赛规则</h2>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>参赛者必须为在校大学生或毕业两年内的青年设计师。</li>
+                        <li>作品需围绕北京中轴线文化遗产展开，体现创新性与传承性。</li>
+                        <li>提交作品格式要求：设计稿 (JPG/PNG/PDF), 设计说明文档 (DOCX/PDF)。</li>
+                        <li>禁止抄袭，一经发现取消参赛资格。</li>
+                        <li>详细规则请下载 <a href="#" class="text-blue-500 hover:underline">《参赛手册》</a>。</li>
+                    </ul>
+                </section>
+
+                 <section id="judges" class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">评委阵容</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div class="bg-gray-50 p-3 rounded">
+                            <img src="https://picsum.photos/seed/judge1/100/100" alt="评委头像" class="w-16 h-16 rounded-full mx-auto mb-2 shadow">
+                            <p class="font-medium">评委姓名 A</p>
+                            <p class="text-sm text-gray-500">职位/机构</p>
+                        </div>
+                         <div class="bg-gray-50 p-3 rounded">
+                            <img src="https://picsum.photos/seed/judge2/100/100" alt="评委头像" class="w-16 h-16 rounded-full mx-auto mb-2 shadow">
+                            <p class="font-medium">评委姓名 B</p>
+                            <p class="text-sm text-gray-500">职位/机构</p>
+                        </div>
+                         <div class="bg-gray-50 p-3 rounded">
+                            <img src="https://picsum.photos/seed/judge3/100/100" alt="评委头像" class="w-16 h-16 rounded-full mx-auto mb-2 shadow">
+                            <p class="font-medium">评委姓名 C</p>
+                            <p class="text-sm text-gray-500">职位/机构</p>
+                        </div>
+                         <div class="bg-gray-50 p-3 rounded">
+                            <img src="https://picsum.photos/seed/judge4/100/100" alt="评委头像" class="w-16 h-16 rounded-full mx-auto mb-2 shadow">
+                            <p class="font-medium">评委姓名 D</p>
+                            <p class="text-sm text-gray-500">职位/机构</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="awards">
+                    <h2 class="text-2xl font-semibold mb-4">奖项设置</h2>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>一等奖 (1名): 奖金 10,000 元 + 证书</li>
+                        <li>二等奖 (3名): 奖金 5,000 元 + 证书</li>
+                        <li>三等奖 (10名): 奖金 1,000 元 + 证书</li>
+                        <li>优秀奖 (若干): 纪念品 + 证书</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-12 py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 北京中轴线大赛平台. 保留所有权利.</p>
+             <p class="text-sm text-gray-400 mt-1">
+                 <a href="../about.html" class="hover:underline">关于我们</a> | 
+                <a href="../about.html#contact" class="hover:underline">联系方式</a> | 
+                <a href="../legal/privacy.html" class="hover:underline">隐私政策</a> | 
+                <a href="../legal/terms.html" class="hover:underline">服务条款</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html> 

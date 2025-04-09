@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品展示 - 北京中轴线文化遗产传承与创新大赛</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body { padding-top: 56px; background-color: #f8f9fa; }
+        .gallery-card img { aspect-ratio: 4 / 3; object-fit: cover; }
+        footer { background-color: #f8f9fa; padding: 2rem 0; margin-top: 3rem; }
+        /* Masonry-like layout simulation for larger screens */
+        @media (min-width: 768px) {
+            .card-columns-md {
+                column-count: 2;
+                column-gap: 1rem;
+                orphans: 1;
+                widows: 1;
+            }
+            .card-columns-md .card {
+                 display: inline-block;
+                 width: 100%;
+                 margin-bottom: 1rem; /* Adjust as needed */
+            }
+        }
+         @media (min-width: 992px) {
+            .card-columns-lg {
+                column-count: 3;
+                column-gap: 1.25rem;
+                 orphans: 1;
+                widows: 1;
+            }
+             .card-columns-lg .card {
+                 display: inline-block;
+                 width: 100%;
+                 margin-bottom: 1.25rem; /* Adjust as needed */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">北京中轴线大赛平台</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="competition-center.html">赛事中心</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="gallery.html">作品展示</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">新闻资讯</a></li>
+                </ul>
+                <!-- Login/Register or User Dropdown based on state -->
+                 <div class="d-flex">
+                    <a href="login.html" class="btn btn-outline-primary me-2">登录</a>
+                    <a href="register.html" class="btn btn-primary">注册</a>
+                     <!-- Logged in state placeholder -->
+                    <!-- 
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             <i class="bi bi-person-circle"></i> 用户名
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarUserDropdown">
+                            <li><a class="dropdown-item" href="user-center.html">个人中心</a></li>
+                            <li><a class="dropdown-item" href="user-center.html?section=submissions">我的作品</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#">退出登录</a></li>
+                        </ul>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Main Content -->
+    <main class="container mt-5">
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold">作品展示墙</h1>
+            <p class="lead text-muted">汇聚创意，点亮中轴</p>
+        </div>
+
+        <!-- Filter/Sort Controls -->
+        <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-2 mb-4">
+            <div class="dropdown">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="trackFilterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    所有赛道
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="trackFilterDropdown">
+                    <li><a class="dropdown-item" href="#">所有赛道</a></li>
+                    <li><a class="dropdown-item" href="#">老城复兴</a></li>
+                    <li><a class="dropdown-item" href="#">创意表达</a></li>
+                    <li><a class="dropdown-item" href="#">美好生活</a></li>
+                    <li><a class="dropdown-item" href="#">使者达人</a></li>
+                    <li><a class="dropdown-item" href="#">中轴纹样</a></li>
+                    <li><a class="dropdown-item" href="#">乐游中轴</a></li>
+                </ul>
+            </div>
+             <div class="dropdown">
+                 <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="yearFilterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    所有年份
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="yearFilterDropdown">
+                    <li><a class="dropdown-item" href="#">所有年份</a></li>
+                    <li><a class="dropdown-item" href="#">2024</a></li>
+                    <li><a class="dropdown-item" href="#">2023</a></li>
+                     <!-- Add more years -->
+                </ul>
+            </div>
+             <div class="btn-group" role="group" aria-label="Sort by">
+                <input type="radio" class="btn-check" name="sortBy" id="sortRecommended" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary" for="sortRecommended"><i class="bi bi-star me-1"></i>推荐</label>
+
+                <input type="radio" class="btn-check" name="sortBy" id="sortLatest" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="sortLatest"><i class="bi bi-clock me-1"></i>最新</label>
+
+                <input type="radio" class="btn-check" name="sortBy" id="sortPopular" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="sortPopular"><i class="bi bi-heart me-1"></i>热度</label>
+            </div>
+        </div>
+
+        <!-- Gallery Grid (Simulating Masonry with card-columns helper classes) -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" data-masonry='{"percentPosition": true }'>
+        <!-- Use data-masonry from Bootstrap 5.3+ JS or a library for real masonry -->
+        <!-- Or use the card-columns-md/lg helper classes defined in <style> -->
+        <!-- <div class="card-columns-lg card-columns-md"> -->
+
+            <!-- Example Gallery Item 1 -->
+            <div class="col">
+                 <div class="card gallery-card shadow-sm h-100">
+                    <a href="gallery-detail.html">
+                        <img src="https://picsum.photos/seed/gallery1/400/300" class="card-img-top" alt="作品封面1">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="gallery-detail.html" class="text-decoration-none text-dark">作品标题示例一：胡同新生</a></h5>
+                        <p class="card-text text-muted small">探索四合院改造与社区微更新的无限可能。</p>
+                        <span class="badge bg-primary">老城复兴</span>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 d-flex justify-content-between align-items-center pb-3">
+                        <small class="text-muted">作者：设计团队 A</small>
+                        <span><i class="bi bi-heart"></i> 123</span>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Example Gallery Item 2 -->
+             <div class="col">
+                <div class="card gallery-card shadow-sm h-100">
+                    <a href="gallery-detail.html">
+                         <img src="https://picsum.photos/seed/gallery2/400/350" class="card-img-top" alt="作品封面2">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="gallery-detail.html" class="text-decoration-none text-dark">光影中轴 - 纪实摄影</a></h5>
+                        <p class="card-text text-muted small">用镜头捕捉中轴线上的晨昏光影与人间烟火。</p>
+                        <span class="badge bg-info text-dark">创意表达</span>
+                    </div>
+                     <div class="card-footer bg-transparent border-0 d-flex justify-content-between align-items-center pb-3">
+                        <small class="text-muted">作者：摄影师 B</small>
+                        <span><i class="bi bi-heart-fill text-danger"></i> 456</span>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Example Gallery Item 3 -->
+             <div class="col">
+                <div class="card gallery-card shadow-sm h-100">
+                    <a href="gallery-detail.html">
+                         <img src="https://picsum.photos/seed/gallery3/400/250" class="card-img-top" alt="作品封面3">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="gallery-detail.html" class="text-decoration-none text-dark">智慧导览小程序</a></h5>
+                        <p class="card-text text-muted small">结合AR技术，提供沉浸式的中轴线游览体验。</p>
+                        <span class="badge bg-success">美好生活</span>
+                    </div>
+                     <div class="card-footer bg-transparent border-0 d-flex justify-content-between align-items-center pb-3">
+                        <small class="text-muted">作者：开发者 C</small>
+                         <span><i class="bi bi-heart"></i> 78</span>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Add more gallery items... -->
+              <div class="col">
+                 <div class="card gallery-card shadow-sm h-100">
+                     <a href="gallery-detail.html">
+                        <img src="https://picsum.photos/seed/gallery4/400/320" class="card-img-top" alt="作品封面4">
+                     </a>
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="gallery-detail.html" class="text-decoration-none text-dark">"中轴说"志愿讲解</a></h5>
+                        <p class="card-text text-muted small">面向青少年，生动讲述中轴线故事。</p>
+                        <span class="badge bg-warning text-dark">使者达人</span>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 d-flex justify-content-between align-items-center pb-3">
+                        <small class="text-muted">作者：文化志愿者 D</small>
+                         <span><i class="bi bi-heart"></i> 99</span>
+                    </div>
+                </div>
+            </div>
+             <div class="col">
+                 <div class="card gallery-card shadow-sm h-100">
+                     <a href="gallery-detail.html">
+                        <img src="https://picsum.photos/seed/gallery5/400/280" class="card-img-top" alt="作品封面5">
+                     </a>
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="gallery-detail.html" class="text-decoration-none text-dark">宫廷纹样现代转译</a></h5>
+                        <p class="card-text text-muted small">提取传统纹样元素，设计现代丝巾图案。</p>
+                         <span class="badge bg-danger">中轴纹样</span>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 d-flex justify-content-between align-items-center pb-3">
+                        <small class="text-muted">作者：设计师 E</small>
+                         <span><i class="bi bi-heart-fill text-danger"></i> 201</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                 <div class="card gallery-card shadow-sm h-100">
+                     <a href="gallery-detail.html">
+                        <img src="https://picsum.photos/seed/gallery6/400/380" class="card-img-top" alt="作品封面6">
+                     </a>
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="gallery-detail.html" class="text-decoration-none text-dark">中轴线 City Walk 路线设计</a></h5>
+                        <p class="card-text text-muted small">串联历史遗迹与特色小店，打造深度文化漫步体验。</p>
+                        <span class="badge bg-secondary">乐游中轴</span>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 d-flex justify-content-between align-items-center pb-3">
+                        <small class="text-muted">作者：旅游策划 F</small>
+                        <span><i class="bi bi-heart"></i> 150</span>
+                     </div>
+                </div>
+            </div>
+
+        <!-- </div> --> <!-- End of card-columns -->
+        </div> <!-- End of row -->
+
+        <!-- Pagination Placeholder -->
+        <nav aria-label="Gallery navigation" class="mt-5 d-flex justify-content-center">
+            <ul class="pagination shadow-sm">
+                <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">上一页</a></li>
+                <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                 <li class="page-item"><a class="page-link" href="#">...</a></li>
+                 <li class="page-item"><a class="page-link" href="#">10</a></li>
+                <li class="page-item"><a class="page-link" href="#">下一页</a></li>
+            </ul>
+        </nav>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-muted py-4 bg-light mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2024 北京中轴线文化遗产传承与创新大赛组委会</p>
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item"><a href="#">关于我们</a></li>
+                <li class="list-inline-item"><a href="#">联系方式</a></li>
+                <li class="list-inline-item"><a href="#">隐私政策</a></li>
+                <li class="list-inline-item"><a href="#">服务条款</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Optional: Add Masonry JS if needed for true masonry layout -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script> -->
+</body>
+</html> 

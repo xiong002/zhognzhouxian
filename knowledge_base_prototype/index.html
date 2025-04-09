@@ -15,7 +15,6 @@
         </header>
         <div class="app-body">
             <aside class="sidebar collapsed">
-                <button class="toggle-sidebar" id="toggleSidebarBtn" title="切换侧边栏"><i class="fas fa-bars"></i></button>
                 <div class="sidebar-content">
                     <div class="sidebar-tabs">
                         <button class="tab-link active" data-tab="tab-nav"><i class="fas fa-compass"></i><span class="tab-text">导航</span></button>
@@ -58,39 +57,69 @@
                     </div>
                 </div>
             </aside>
+            <button class="toggle-sidebar" id="toggleSidebarBtn" title="切换侧边栏"><i class="fas fa-bars"></i></button>
             <main class="main-content">
-                <div class="chat-history" id="chatHistory">
-                    <div class="message ai-message">
-                        <p>您好！我是您的有色金属加工工程设计助手，请问有什么可以帮您？</p>
+                <div class="chat-area">
+                    <div class="chat-history" id="chatHistory">
+                        <!-- 对话消息将在这里动态添加 -->
+                        <div class="message ai-message">
+                            <p>您好！我是您的有色金属加工工程设计助手，请问有什么可以帮您？</p>
+                        </div>
+                        <div class="message user-message pinned-item-source" data-message-id="msg-initial-user">
+                            <p>查询 6061 铝合金的 T6 热处理工艺标准，并查找相关的项目应用案例。</p>
+                            <button class="pin-button" title="固定此消息"><i class="fas fa-thumbtack"></i></button>
+                        </div>
+                        <div class="message ai-message pinned-item-source" data-message-id="msg-initial-ai">
+                            <p>根据知识库信息，6061 铝合金 T6 热处理工艺标准主要参考 <a href="#" class="source-link" data-source-info="GB/T 3190-2020 标准文档 (模拟)">GB/T 3190-2020</a> 标准中的相关章节。关键参数包括固溶处理温度 530±5°C，保温时间 X 小时，随后进行人工时效，温度 175±5°C，时间 Y 小时。已为您找到相关应用案例，请查看侧边栏"搜索结果"面板。 <br>[来源: <a href="#" class="source-link" data-source-info="GB/T 3190-2020 标准文档 (模拟)">GB/T 3190-2020</a>, <a href="#" class="source-link" data-source-info="内部设计手册 V3.0 (模拟)">设计手册 V3.0</a>]</p>
+                            <button class="pin-button" title="固定此消息"><i class="fas fa-thumbtack"></i></button>
+                        </div>
                     </div>
-                    <div class="message user-message">
-                        <p>查询 6061 铝合金的 T6 热处理工艺标准，并查找相关的项目应用案例。</p>
-                        <button class="pin-button" title="固定此消息"><i class="fas fa-thumbtack"></i></button>
-                    </div>
-                    <div class="message ai-message">
-                        <p>根据知识库信息，6061 铝合金 T6 热处理工艺标准主要参考 <a href="#" class="source-link" data-source-info="GB/T XXXX-XXXX 标准文档">GB/T XXXX-XXXX</a> 标准中的相关章节。关键参数包括固溶处理温度 530±5°C，保温时间 X 小时，随后进行人工时效，温度 175±5°C，时间 Y 小时。已为您找到相关应用案例，请查看侧边栏"搜索结果"面板。 [来源: <a href="#" class="source-link" data-source-info="GB/T XXXX-XXXX 标准文档">GB/T XXXX-XXXX</a>, <a href="#" class="source-link" data-source-info="内部设计手册 V2.1">设计手册 V2.1</a>]</p>
-                        <button class="pin-button" title="固定此消息"><i class="fas fa-thumbtack"></i></button>
+                    <div class="chat-input-area">
+                        <div class="input-wrapper" id="inputWrapper">
+                            <div class="context-area" id="contextArea">
+                                <button class="control-button add-context-button" id="addContextBtn" title="添加上下文 (@)"><i class="fas fa-at"></i> 添加上下文</button>
+                            </div>
+                            <textarea id="userInput" placeholder="在此输入您的问题... (Shift+Enter 换行)"></textarea>
+                            <div class="input-controls">
+                                <div class="control-group">
+                                    <label for="modelSelect" class="control-label"><i class="fas fa-brain"></i> 模型:</label>
+                                    <select id="modelSelect" class="model-select">
+                                        <option value="deepseek-r1">deepseek-r1</option>
+                                        <option value="chinalco-llm">中铝大模型</option>
+                                        <option value="qwen-llm">千问大模型</option>
+                                    </select>
+                                </div>
+                                <div class="control-group">
+                                    <button class="control-button" id="uploadImageBtn" title="上传图片"><i class="fas fa-image"></i> 图片</button>
+                                    <button class="control-button send-button-inline" id="sendBtn" title="发送消息"><i class="fas fa-paper-plane"></i> 发送</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="chat-input-area">
-                    <textarea id="userInput" placeholder="在此输入您的问题... (Shift+Enter 换行)"></textarea>
-                    <button id="sendBtn" title="发送消息"><i class="fas fa-paper-plane"></i> 发送</button>
+                <div class="viewer-panel" id="viewerPanel">
+                    <div class="viewer-header">
+                        <h3 id="viewerTitle">资料查看</h3>
+                        <button class="close-viewer-btn" id="closeViewerBtn" title="关闭查看器"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="viewer-content" id="viewerContent">
+                        <p class="placeholder">点击对话或侧边栏中的链接可在此处查看详细资料。</p>
+                        <!-- 内容将动态加载 -->
+                    </div>
                 </div>
             </main>
         </div>
     </div>
 
-    <!-- 可视化查看器 Modal -->
-    <div id="viewerModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeModalBtn">&times;</span>
-            <h3 id="viewerTitle">查看内容</h3>
-            <div id="viewerContent">
-                <p>这里是模拟的文档/图纸查看器。</p>
-                <img src="https://via.placeholder.com/600x400.png?text=Placeholder+Image" alt="Placeholder" style="max-width: 100%;">
-            </div>
-        </div>
+    <!-- File Search Popup -->
+    <div class="file-search-popup" id="fileSearchPopup">
+        <input type="text" id="popupFileSearchInput" placeholder="搜索文件...">
+        <div class="search-results-placeholder">输入以搜索文件</div>
+        <!-- Real implementation would show results here -->
     </div>
+
+    <!-- 可视化查看器 Modal (REMOVED) -->
+    <!-- <div id="viewerModal" class="modal"> ... </div> -->
 
     <script src="js/script.js"></script>
 </body>
